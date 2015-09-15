@@ -16,3 +16,5 @@ if ($Eesnimi_algab_vokaaliga) {
 $a= 1.23;
 $b=2.34;
 echo $a+$b;
+
+echo @$_GET['koer'];
