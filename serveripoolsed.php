@@ -4,3 +4,4 @@ $Eesnimi = 'Merike';
 $Perenimi = 'Tomson';
 $Vanus = 22;
 echo "$Eesnimi $Perenimi ($Vanus)";
+$Eesnimi_algab_vokaaliga=false;
