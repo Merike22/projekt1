@@ -2,4 +2,5 @@ Tere Maailm
 <?php
 $Eesnimi = 'Merike';
 $Perenimi = 'Tomson';
-echo "$Eesnimi $Perenimi";
+$Vanus = 22;
+echo "$Eesnimi $Perenimi ($Vanus)";
