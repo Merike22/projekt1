@@ -9,7 +9,10 @@ $isik = (object)['eesnimi'=>$Eesnimi, 'perenimi'=>$Perenimi, 'vanus'=>$Vanus];
 $isik->sugu='Naine';
 echo "{$isik->eesnimi} {$isik->perenimi} ({$isik->vanus}) {$isik->sugu}";
 if ($Eesnimi_algab_vokaaliga) {
-    echo " Nimi algab vokaaliga";
+    echo " Nimi algab vokaaliga ";
 } else {
-    echo " Nimi ei alga vokaaliga";
+    echo " Nimi ei alga vokaaliga ";
 }
+$a= 1.23;
+$b=2.34;
+echo $a+$b;
