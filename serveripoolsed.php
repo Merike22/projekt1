@@ -18,3 +18,23 @@ $b=2.34;
 echo $a+$b;
 
 echo @$_GET['koer'];
+?>
+<form action="serveripoolsed.php" method="post">
+<input name="kass" type="text">
+<input type="submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST['submit'])) {
+
+    $kass = $_POST['kass'];
+$myArray = array('siiam','abessiinia', 'burma');
+
+$i = count($myArray);
+for ($x = 0; $x < $i; $x++ ){
+    if($myArray[$x] == $kass){
+        echo 'Kass oli : ' . $kass;
+    }
+}
+}
+?>
