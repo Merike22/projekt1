@@ -13,7 +13,7 @@
         alert("Tere maailm!");
     }
 </script>
-
+<a href="http://www.khk.ee">tere maailm</a>
 <?php
 ?>
 </body>
