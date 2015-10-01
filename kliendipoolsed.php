@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ET">
 <html>
 <head>
     <title></title>
@@ -14,6 +15,11 @@
     }
 </script>
 <a href="http://www.khk.ee">tere maailm</a>
+<a href="http://localhost/projekt1/kliendipoolsed.php?">
+    <span>j‰‰me siia</span>
+</a>
+
+
 <?php
 ?>
 </body>
