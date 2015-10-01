@@ -4,6 +4,16 @@
     <title></title>
 </head>
 <body>
+<p>Vajuta nuppu</p>
+
+<button onclick="myFunction()">Vajuta</button>
+
+<script>
+    function myFunction() {
+        alert("Tere maailm!");
+    }
+</script>
+
 <?php
 ?>
 </body>
