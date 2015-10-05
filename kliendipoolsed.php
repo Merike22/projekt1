@@ -36,10 +36,3 @@ koer_kass.onclick = function(){
 </script>
 </body>
 </html>
-
-/**
- * Created by PhpStorm.
- * User: merka
- * Date: 1.10.2015
- * Time: 11:44
- */
