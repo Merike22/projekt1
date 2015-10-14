@@ -2,10 +2,46 @@
 <html lang="ET">
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
     <title></title>
 </head>
 <body>
+<section class="text">
+    Vajuta nuppu et<br> vahetada kodulehe taustavärvi!;
+</section>
+
+<button id="btn">RED</button>
+<button id="btn2">GREEN</button>
+<button id="btn3">Blue</button>
+<script>
+    $('#btn').click(function() {
+        $('body').css('background', '#ff0000')
+    });
+    $('#btn2').click(function() {
+        $('body').css('background', '#6BB247')
+    });
+    $('#btn3').click(function() {
+        $('body').css('background', '#246BB2')
+    });
+</script>
+<style>
+    #btn:hover {
+        background: #ff0000;
+        color: #ffffff;
+    }
+    #btn2:hover {
+        background: #6BB247;
+        color: #ffffff;
+    }
+    #btn3:hover {
+        background: #246BB2;
+        color: #ffffff;
+    }
+
+</style>
+
 <p>Vajuta nuppu</p>
 
 <button onclick="myFunction()">Vajuta</button>
