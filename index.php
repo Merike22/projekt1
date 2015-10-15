@@ -3,10 +3,15 @@
 </head>
 <body>
 <?php
-$x_RepCom = '<input name="RepCom" type="text" value="';
-if(isset($RepCom)) { $x_RepCom .= $RepCom; }
-$x_RepCom .= '>';
+var_dump($_GET['page']);
+array(
+    'id' => 'home.php')
+  $product_id = $_GET['id'];
+  $product = $products[$product_id];
 
-echo 'Bonjour ' . htmlspecialchars($_GET["name"]) . '!';
+  echo $product_id;
+  var_dump($product);
+
 ?>
+
 </body>
