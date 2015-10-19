@@ -1,17 +1,14 @@
 <!DOCTYPE html>
+<html lang="et">
 <head>
+    <meta charset="UTF-8">
+    <title>Serveripoolsed</title>
 </head>
 <body>
 <?php
-var_dump($_GET['page']);
-array(
-    'id' => 'home.php')
-  $product_id = $_GET['id'];
-  $product = $products[$product_id];
-
-  echo $product_id;
-  var_dump($product);
-
+   if(isset($_GET['page'])){
+       require $_GET['page'].".php";
+   }
 ?>
-
 </body>
+</html>
