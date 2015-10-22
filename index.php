@@ -10,6 +10,6 @@
        require $_GET['page'].".php";
    }
 ?>
-<p>Test</p>
+
 </body>
 </html>
