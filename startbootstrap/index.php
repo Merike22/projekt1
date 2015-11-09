@@ -1,4 +1,8 @@
-k<!DOCTYPE html>
+<?php
+$posts = array("Title", "Subtitle", "Author", "Date");
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -99,6 +103,7 @@ k<!DOCTYPE html>
                         Man must explore, and this is exploration at its greatest
                     </h2>
                 </a>
+                <?php echo "Man must explore, and this is exploration at its greatest " . $posts[0] . ", " . $posts[1] . " and " . $posts[2] . "."; ?>
 <hr>
 
 <!-- Footer -->
