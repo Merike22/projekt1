@@ -103,7 +103,7 @@ $posts = array("Title", "Subtitle", "Author", "Date");
                         Man must explore, and this is exploration at its greatest
                     </h2>
                 </a>
-                <?php echo "Man must explore, and this is exploration at its greatest " . $posts[0] . ", " . $posts[1] . " and " . $posts[2] . "."; ?>
+                <?php echo "Man must explore, and this is exploration at its greatest " . $posts[0] . ", " . $posts[1] . ", " . $posts[2] . " "; ?>
 <hr>
 
 <!-- Footer -->
