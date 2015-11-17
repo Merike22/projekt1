@@ -109,7 +109,7 @@
 
                     <h3 class="post-subtitle">
                         Problems look mighty small from 150 miles up
-                        <?= $posts['subtitle'] ?>>
+                        <?= $posts['subtitle'] ?>
                     </h3>
                 </a>
 
