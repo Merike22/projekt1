@@ -1,6 +1,9 @@
-<?php
-$posts = array("Title", "Subtitle", "Author", "Date");
-?>
+<?php $posts = array(
+    'title' => 'Man must explore, and this is exploration at its greatest',
+    'subtitle' => 'Problems look mighty small from 150 miles up',
+    'author' => 'Start Bootstrap',
+    'date' => 'September 24, 2014'
+) ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,10 +104,20 @@ $posts = array("Title", "Subtitle", "Author", "Date");
                 <a href="post.html">
                     <h2 class="post-title">
                         Man must explore, and this is exploration at its greatest
+                        <?= $posts['title'] ?>
                     </h2>
+
+                    <h3 class="post-subtitle">
+                        Problems look mighty small from 150 miles up
+                        <?= $posts['subtitle'] ?>>
+                    </h3>
                 </a>
-                <?php echo "Man must explore, and this is exploration at its greatest " . $posts[0] . ", " . $posts[1] . ", " . $posts[2] . " "; ?>
-<hr>
+
+                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+
+                <p class="post-meta">Posted by <a href="#"><?= $posts['author'] ?></a> on <?= $posts['date'] ?></p>
+            </div>
+            <hr>
 
 <!-- Footer -->
 <footer>
