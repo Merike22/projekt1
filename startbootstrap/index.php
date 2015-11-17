@@ -1,9 +1,18 @@
-<?php $posts = array(
-    'title' => 'Man must explore, and this is exploration at its greatest',
-    'subtitle' => 'Problems look mighty small from 150 miles up',
-    'author' => 'Start Bootstrap',
-    'date' => 'September 24, 2014'
-) ?>
+<?php
+$posts = array(
+    "title" => "Man must explore, and this is exploration at its greatest",
+    "subtitle" => "Problems look mighty small from 150 miles up",
+    "author" => "Start Bootstrap",
+    "date" => "September 24, 2014");
+$post[] = array("Man must explore, and this is exploration at its greatest",
+    "Problems look mighty small from 150 miles up",
+    "Start Bootstrap",
+    "September 24, 2014");
+$post[] = array("I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.",
+    "We predict too much for the next year and yet far too little for the next ten.",
+    "Start Bootstrap",
+    "August 24, 2014");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,32 +107,45 @@
 
 <!-- Main Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        Man must explore, and this is exploration at its greatest
-                        <?= $posts['title'] ?>
-                    </h2>
+    <? foreach ($post as $postitus): ?>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <?= $posts['title'] ?>
+                            <?php echo "$postitus[0]"; ?>
+                        </h2>
 
-                    <h3 class="post-subtitle">
-                        Problems look mighty small from 150 miles up
-                        <?= $posts['subtitle'] ?>
-                    </h3>
-                </a>
+                        <h3 class="post-subtitle">
+                            <?= $posts['subtitle'] ?>
+                            <?php echo "$postitus[1]"; ?>
+                        </h3>
+                    </a>
 
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                    <p class="post-meta">Posted by <a href="#"><?= $posts['author'] ?></a> on <?= $posts['date'] ?></p>
 
-                <p class="post-meta">Posted by <a href="#"><?= $posts['author'] ?></a> on <?= $posts['date'] ?></p>
+                    <p class="post-meta">Posted by <a href="#"><?php echo "$postitus[2]"; ?></a>
+                        on <?php echo "$postitus[3]"; ?></p>
+                </div>
             </div>
-            <hr>
+        </div>
+    <? endforeach ?>
+    <hr>
+
+    <!-- Pager -->
+    <ul class="pager">
+        <li class="next">
+            <a href="#">Older Posts &rarr;</a>
+        </li>
+    </ul>
+</div>
+<hr>
 
 <!-- Footer -->
 <footer>
-
+    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
 </footer>
-
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
