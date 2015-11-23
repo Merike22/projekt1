@@ -1,4 +1,12 @@
 <?php
+if (isset($_GET['emailvalidation'])) {
+    $meil = $_GET['emailvalidation'];
+    if (checkdnsrr(array_pop(explode("@", $meil)), "MX")) {
+        exit("Emaili domeen eksisteerib.");
+    } else {
+        exit("Emaili domeeni ei ole olemas.");
+    }
+}
 $filename = "data.csv";
 if (file_exists($filename)) {
     $file = fopen($filename, "r");
@@ -12,7 +20,7 @@ if (file_exists($filename)) {
 } else {
     echo "Faili ei leitud. Luuakse data.csv fail!";
     $file = fopen($filename, "w");
-    file_put_contents($filename, "Tiina;Sarap;tiina.sarap@gmail.com\nLauri;Pihlapu;lauri.pihlapu@gmail.com\n");
+    //file_put_contents($filename, "Tiina;Sarap;tiina.sarap@gmail.com\nLauri;Pihlapu;lauri.pihlapu@gmail.com\n");
     fclose($file);
 }
 ?>
