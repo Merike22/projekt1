@@ -1,4 +1,5 @@
 <?php
+require('config.php');
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,6 +15,8 @@ if (mysqli_num_rows($result) > 0) {
         $posts[] = $row;
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
