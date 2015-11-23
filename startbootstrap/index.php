@@ -1,17 +1,19 @@
 <?php
-$posts = array(
-    "title" => "Man must explore, and this is exploration at its greatest",
-    "subtitle" => "Problems look mighty small from 150 miles up",
-    "author" => "Start Bootstrap",
-    "date" => "September 24, 2014");
-$post[] = array("Man must explore, and this is exploration at its greatest",
-    "Problems look mighty small from 150 miles up",
-    "Start Bootstrap",
-    "September 24, 2014");
-$post[] = array("I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.",
-    "We predict too much for the next year and yet far too little for the next ten.",
-    "Start Bootstrap",
-    "August 24, 2014");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "blog";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM POSTS JOIN AUTHORS";
+$result = $conn->query($sql);
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $posts[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +40,9 @@ $post[] = array("I believe every human has a finite number of heartbeats. I don'
           type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-          rel='stylesheet' type='text/css'>
+    <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -98,7 +101,7 @@ $post[] = array("I believe every human has a finite number of heartbeats. I don'
                 <div class="site-heading">
                     <h1>Clean Blog</h1>
                     <hr class="small">
-                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    <span class="subheading">A Clean Blog Theme</span>
                 </div>
             </div>
         </div>
@@ -107,32 +110,27 @@ $post[] = array("I believe every human has a finite number of heartbeats. I don'
 
 <!-- Main Content -->
 <div class="container">
-    <? foreach ($post as $postitus): ?>
+    <?php foreach ($posts as $post): ?>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                            <?= $posts['title'] ?>
-                            <?php echo "$postitus[0]"; ?>
+                            <?= $post['title'] ?>
                         </h2>
 
                         <h3 class="post-subtitle">
-                            <?= $posts['subtitle'] ?>
-                            <?php echo "$postitus[1]"; ?>
+                            <?= $post['description'] ?>
                         </h3>
                     </a>
 
-                    <p class="post-meta">Posted by <a href="#"><?= $posts['author'] ?></a> on <?= $posts['date'] ?></p>
-
-                    <p class="post-meta">Posted by <a href="#"><?php echo "$postitus[2]"; ?></a>
-                        on <?php echo "$postitus[3]"; ?></p>
+                    <p class="post-meta">Posted by <a href="#"><?= $post['name'] ?></a>
+                        on <?= $post['date'] ?></p>
                 </div>
+                <hr>
             </div>
         </div>
-    <? endforeach ?>
-    <hr>
-
+    <?php endforeach ?>
     <!-- Pager -->
     <ul class="pager">
         <li class="next">
@@ -140,12 +138,46 @@ $post[] = array("I believe every human has a finite number of heartbeats. I don'
         </li>
     </ul>
 </div>
+
 <hr>
 
 <!-- Footer -->
 <footer>
-    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+    </div>
 </footer>
+
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
